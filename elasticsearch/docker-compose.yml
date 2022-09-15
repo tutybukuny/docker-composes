@@ -11,12 +11,13 @@ services:
       - discovery.type=single-node
       - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
       - bootstrap.memory_lock=true
+      - ELASTIC_PASSWORD=123456
     ulimits:
       memlock:
         soft: -1
         hard: -1
     volumes:
-      - elsdata:/usr/share/elasticsearch/data
+      - ./elsdata:/usr/share/elasticsearch/data
 
   kibana:
     container_name: kibana
