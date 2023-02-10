@@ -3,12 +3,12 @@ services:
   mysql:
     image: mysql:8.0
     container_name: mysql
-    restart: always
+    restart: unless-stopped
     cap_add:
       - SYS_NICE
     environment:
-      - MYSQL_DATABASE=gapo_cms
-      - MYSQL_ROOT_PASSWORD=gapo_api
+      - MYSQL_DATABASE=mydb
+      - MYSQL_ROOT_PASSWORD=123456
     ports:
       - '3306:3306'
     volumes:
