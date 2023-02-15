@@ -8,11 +8,11 @@ services:
       - ./rs-init.sh:/scripts/rs-init.sh
       - ./init.js:/scripts/init.js
       - ./mongo-replica1:/data/db
-    network_mode: host
+        #network_mode: host
 #    networks:
 #      - mongo-network
-#    ports:
-#      - 27017:27017
+    ports:
+      - 27017:27017
 #    depends_on:
 #      - mongo2
 #      - mongo3
